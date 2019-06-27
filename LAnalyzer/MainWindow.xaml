@@ -37,7 +37,7 @@
         <CheckBox x:Name="checkBoxLoopDetails" Content="_Loop Details" 
             Margin="4,4,4,4"
             Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Click="CheckBoxLoopDetails_Click"/>
+            HorizontalAlignment="Left" VerticalAlignment="Top" Click="CheckBoxLoopDetails_Click" IsChecked="True"/>
 
         <Label x:Name="labelAnalysis" Content="Analysis"
             Grid.Row="2" Grid.Column="0" Margin="4,0,0,0"/>

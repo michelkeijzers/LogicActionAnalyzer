@@ -158,9 +158,15 @@ namespace LogicAnalyzer
                     {
                         PrintExpansionRegionPpcb(line);
                     }
-                    else if (line.Contains(" = nr_iterations;"))
+                    else if (line.Contains("logical_action_p->nr_iterations_") &&
+                             line.Contains("xDEF_FIXED_ARRAY_SIZE"))
                     {
-                        DecreaseIndent();
+                        PrintEndOfFixedArrayLoop(line);
+                    }
+                    else if (line.Contains("logical_action_p->nr_iterations_") &&
+                             line.Contains(" = nr_iterations"))
+                    {
+                        PrintEndOfVarArrayLoop(line);
                     }
                 }
 
@@ -476,7 +482,31 @@ namespace LogicAnalyzer
         }
 
 
-        private string[] Split(string[] separators, string line)
+        private void PrintEndOfFixedArrayLoop(string line)
+        {
+            if (_showLoopDetails)
+            {
+                string[] separators = { "nr_iterations_", " = " };
+                AppendIndentedLine("End of Fixed array loop: " + Split(separators, line)[1]);
+            }
+
+            DecreaseIndent();
+        }
+
+
+        private void PrintEndOfVarArrayLoop(string line)
+        {
+            if (_showLoopDetails)
+            {
+                string[] separators = { "nr_iterations_", " = " };
+                AppendIndentedLine("End of Var array loop: " + Split(separators, line)[1]);
+            }
+
+            DecreaseIndent();
+        }
+
+         
+private string[] Split(string[] separators, string line)
         {
             var result = line.Split(separators, StringSplitOptions.RemoveEmptyEntries);
             return result;
