@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicActionAnalyzer
+namespace LogicalActionAnalyzer
 {
-
     public class Summary
     {
         public int nrOfSa;

@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicalActionAnalyzer", "LAnalyzer\LogicalActionAnalyzer.csproj", "{14A3C902-B6DB-4740-8A2C-131FEDE187CE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D9B2D12A-C955-4346-A457-CC2819308B47}"
+	ProjectSection(SolutionItems) = preProject
+		LogicActionAnalyzer.ico = LogicActionAnalyzer.ico
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

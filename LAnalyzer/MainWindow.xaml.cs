@@ -1,5 +1,4 @@
-﻿using LogicActionAnalyzer;
-using LogicAnalyzer;
+﻿
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.IO;
@@ -20,6 +19,8 @@ namespace LogicalActionAnalyzer
         public MainWindow()
         {
             InitializeComponent();
+
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-EN");
 
             radioButtonTextBox.IsChecked = true;
             buttonRestart.IsEnabled = false;
@@ -60,6 +61,9 @@ namespace LogicalActionAnalyzer
             textBoxFolder.IsEnabled = true;
             buttonBrowse.IsEnabled = true;
             textBoxLaFile.IsEnabled = false;
+
+            textBoxFolder.Focus();
+
             Analyze();
         }
 
@@ -68,6 +72,9 @@ namespace LogicalActionAnalyzer
             textBoxFolder.IsEnabled = false;
             buttonBrowse.IsEnabled = false;
             textBoxLaFile.IsEnabled = true;
+
+            textBoxLaFile.Focus();
+
             Analyze();
         }
 
@@ -128,7 +135,8 @@ namespace LogicalActionAnalyzer
         {
             var header = new StringBuilder();
 
-            header.AppendLine("Logic Actions Analyzer");
+            header.AppendLine("Logical Action Analyzer");
+            header.AppendLine("=======================\n");
             header.AppendFormat("Date/Time: {0}, {1}\n", 
                 DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString());
 
@@ -148,7 +156,7 @@ namespace LogicalActionAnalyzer
 
             try
             {
-                using (new LogicActionAnalyzer.WaitCursor())
+                using (new WaitCursor())
                 {
 
                     Thread.Sleep(10);

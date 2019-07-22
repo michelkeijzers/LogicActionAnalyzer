@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Logical Action Analyzer 1.0" 
         Height="613" Width="729"
-        HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Icon="LogicActionAnalyzer.ico">
 
     <Grid Margin="4,4,4,4">
         <Grid.RowDefinitions>
@@ -37,13 +37,16 @@
         <CheckBox x:Name="checkBoxLoopDetails" Content="_Loop Details" 
             Margin="4,4,4,4"
             Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Click="CheckBoxLoopDetails_Click" IsChecked="True"/>
+            HorizontalAlignment="Left" VerticalAlignment="Top" 
+            Click="CheckBoxLoopDetails_Click" 
+            IsChecked="True"/>
 
         <Label x:Name="labelAnalysis" Content="Analysis"
             Grid.Row="2" Grid.Column="0" Margin="4,0,0,0"/>
 
-        <TextBox x:Name="textBoxAnalysis" Margin="4,25,4,14" MinHeight="200" MinWidth="400" 
-                    Grid.Column="0" Grid.Row ="21" Grid.ColumnSpan="3"
+        <TextBox x:Name="textBoxAnalysis" 
+            Margin="4,25,4,14" MinHeight="200" MinWidth="400" 
+            Grid.Column="0" Grid.Row ="21" Grid.ColumnSpan="3"
             TextWrapping="Wrap" 
             IsReadOnly="True" 
             HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
@@ -52,19 +55,20 @@
         <RadioButton x:Name="radioButtonFolder" Content="_Folder (gen_src\com\int\bin)" 
             Grid.Column="1" HorizontalAlignment="Left" 
             Margin="10,6,0,0" VerticalAlignment="Top" 
-                     Checked="RadioButtonFolder_Checked"/>
-        <RadioButton x:Name="radioButtonTextBox" 
-                     Content="_Text Box (Copy from gen_src\com\int\bin\&lt;CC&gt;_LA_&lt;LA Name&gt;.c)" 
+            Checked="RadioButtonFolder_Checked"/>
+        <RadioButton 
+            x:Name="radioButtonTextBox" 
+            Content="_Text Box (Copy from gen_src\com\int\bin\&lt;CC&gt;_LA_&lt;LA Name&gt;.c)" 
             Grid.Column="1" HorizontalAlignment="Left" 
             Margin="10,30,4,4" Height="20" VerticalAlignment="Top" 
-                     Checked="RadioButtonTextBox_Checked"/>
+            Checked="RadioButtonTextBox_Checked"/>
         <TextBox x:Name="textBoxFolder" Grid.Column="1" 
-                 HorizontalAlignment="Left" Height="23" Margin="185,4,0,0" 
-                 TextWrapping="Wrap" 
-                 VerticalAlignment="Top" Width="381" Grid.ColumnSpan="2" 
-                 TextChanged="TextBoxFolder_TextChanged"/>
+            HorizontalAlignment="Left" Height="23" Margin="185,4,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="381" Grid.ColumnSpan="2" 
+            TextChanged="TextBoxFolder_TextChanged"/>
         <Button x:Name="buttonBrowse" Content="_..." Grid.Column="2" 
-                HorizontalAlignment="Left" Margin="122,4,0,0" VerticalAlignment="Top" 
-                Width="48" Click="ButtonBrowse_Click" Height="23"/>
+            HorizontalAlignment="Left" Margin="122,4,0,0" VerticalAlignment="Top" 
+            Width="48" Click="ButtonBrowse_Click" Height="23"/>
      </Grid>
 </Window>

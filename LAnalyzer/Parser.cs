@@ -1,11 +1,10 @@
-﻿using LogicActionAnalyzer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicAnalyzer
+namespace LogicalActionAnalyzer
 {
     public class Parser
     {
@@ -43,7 +42,7 @@ namespace LogicAnalyzer
             string previousLine = "";
             bool appendToNextLine = false;
 
-            _lineNumber = 0;
+            _lineNumber = 1;
 
             foreach (var currentLine in la)
             {
@@ -54,7 +53,7 @@ namespace LogicAnalyzer
                     line = previousLine + " " + currentLine;
                 }
 
-                if (currentLine.EndsWith("=") || currentLine.EndsWith(","))
+                if (currentLine.EndsWith("=") || currentLine.EndsWith(",") || currentLine.EndsWith("("))
                 {
                     appendToNextLine = true;
                 }
@@ -198,8 +197,9 @@ namespace LogicAnalyzer
 
         private void StoreFunctionName(string line)
         {
-            string[] separators = { "static int ", "(const int entry_id " };
-            _functionName = Split(separators, line)[0];
+            string[] separators = { "static int ", "const int entry_id " };
+            _functionName = Split(separators, line)[0].Trim();
+            _functionName = _functionName.Replace("(", "");
         }
 
 
